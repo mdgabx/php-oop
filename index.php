@@ -3,15 +3,22 @@
     class User {
 
         // properties methods
-        public $username = 'Mark';
+         public $username;
+
+        public function __construct($username)
+        {
+            $this->username =  'ken';
+        }
 
         public function showMessage() {
             return "$this->username is ma name";
         }
 
+
+
     }
 
-    $userOne = new User();
+    $userOne = new User('mark');
 
     echo $userOne->showMessage();
 
