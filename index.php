@@ -3,7 +3,7 @@
     class User {
 
         // properties methods
-         public $username;
+         private $username;
 
         public function __construct($username)
         {
@@ -20,7 +20,7 @@
 
     $userOne = new User('mark');
 
-    echo $userOne->showMessage();
+    echo $userOne->username();
 
     // // echo get_class($userOne);
     // print_r(get_class_vars('User'));
