@@ -3,24 +3,42 @@
     class User {
 
         // properties methods
-         private $username;
+        public $username;
+        private $email;
 
-        public function __construct($username)
+
+        public function __construct($username, $email)
         {
-            $this->username =  'ken';
+            $this->username =  $username;
+            $this->email = $email;
         }
 
-        public function showMessage() {
-            return "$this->username is ma name";
+        public function showMessage() 
+        {
+            return "$this->username is ma name" . "$this->email";
         }
 
+        //getter
 
+        public function getEmail() {
+            return $this->email;
+        }
+
+        //setter
+        public function setEmail($email) {
+            if(strpos($email, '@') > -1) 
+            {
+                $this->email = $email;
+            }
+        }
 
     }
 
-    $userOne = new User('mark');
+    $userOne = new User('username', 'helo@world.com');
 
-    echo $userOne->username();
+    $userOne->setEmail('ad@gmail.com');
+
+    echo $userOne->getEmail();
 
     // // echo get_class($userOne);
     // print_r(get_class_vars('User'));
