@@ -4,7 +4,8 @@
 
         // properties methods
         public $username;
-        private $email;
+        protected $email;
+        public $role = "member";
 
 
         public function __construct($username, $email)
@@ -50,6 +51,10 @@
             $this->level = $level;
             parent::__construct($username, $email);
         }
+
+        public function setMessage(){
+            return "$this->email";
+        }
     }
 
     $userOne = new User('username', 'helo@world.com');
@@ -59,9 +64,9 @@
    
     $userThree = new AdminUser('yoshi', 'test@gmail.com', 5);
 
-    echo $userThree->username;
-    echo $userThree->getEmail();
-    echo $userThree->level;
+    // echo $userThree->username;
+    // echo $userThree->getEmail();
+    echo $userThree->setMessage();
 ?>
 
 <!DOCTYPE html>
