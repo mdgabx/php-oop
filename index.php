@@ -14,6 +14,12 @@
             $this->email = $email;
         }
 
+
+        public function __destruct()
+        {
+            
+        }
+
         public function showMessage() 
         {
             return "$this->username is ma name" . "$this->email";
@@ -34,8 +40,6 @@
         }
 
     }
-
-
 
     // // echo get_class($userOne);
     // print_r(get_class_vars('User'));
